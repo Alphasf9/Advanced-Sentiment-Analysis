@@ -31,7 +31,7 @@ const SignupPage = () => {
       const response = await axios.post('https://advanced-sentiment-analysis-1.onrender.com/api/auth/register', formData);
       if (response.data) {
         setSuccess('User registered successfully! You can now login.');
-        setUser({ username: formData.username });login
+        setUser({ username: formData.username });
         setFormData({ username: '', password: '' });
       }
     } catch (err) {

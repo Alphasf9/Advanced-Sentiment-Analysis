@@ -22,7 +22,7 @@ const UserProtectWrapper = ({ children }) => {
     }
 
     axios
-      .get('https://advanced-sentiment-analysis-1.onrender.com/auth/profile', {
+      .get('https://advanced-sentiment-analysis-1.onrender.com/api/auth/profile', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
