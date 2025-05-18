@@ -26,7 +26,7 @@ const LoginPage = () => {
     setError('');
 
     try {
-      const res = await axios.post('https://advanced-sentiment-analysis-1.onrender.com/auth/login', formData);
+      const res = await axios.post('https://advanced-sentiment-analysis-1.onrender.com/api/auth/login', formData);
 
       if (res.data && res.data.token) {
         localStorage.setItem('token', res.data.token);

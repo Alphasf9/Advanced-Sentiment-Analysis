@@ -28,10 +28,10 @@ const SignupPage = () => {
     setSuccess('');
 
     try {
-      const response = await axios.post('https://advanced-sentiment-analysis-1.onrender.com/auth/register', formData);
+      const response = await axios.post('https://advanced-sentiment-analysis-1.onrender.com/api/auth/register', formData);
       if (response.data) {
         setSuccess('User registered successfully! You can now login.');
-        setUser({ username: formData.username });
+        setUser({ username: formData.username });login
         setFormData({ username: '', password: '' });
       }
     } catch (err) {
