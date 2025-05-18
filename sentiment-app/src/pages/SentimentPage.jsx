@@ -22,6 +22,9 @@ function SentimentPage() {
             });
 
             const data = await response.json();
+            console.log("This is data"+ data);
+            console.log("This is data.data"+ data.data);
+            console.log("This is data.data.sentiment"+ data.data.sentiment);
             setResult(data.data.sentiment);
         } catch (error) {
             setResult('Error analyzing sentiment.');
