@@ -34,7 +34,7 @@ function SentimentPage() {
     const handleLogout = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('https://advanced-sentiment-analysis-1.onrender.com/auth/logout', {
+            const response = await fetch('https://advanced-sentiment-analysis-1.onrender.com/api/auth/logout', {
                 method: 'POST',
                 headers: {
                     ...(token && { Authorization: `Bearer ${token}` }),
@@ -42,15 +42,15 @@ function SentimentPage() {
             });
 
             if (response.ok) {
-                localStorage.removeItem('token'); // Clear token from localStorage
-                navigate('/login'); // Redirect to login page
+                localStorage.removeItem('token'); 
+                navigate('/login'); 
             } else {
                 console.error('Logout failed');
             }
         } catch (error) {
             console.error('Error during logout:', error);
-            localStorage.removeItem('token'); // Clear token even if request fails
-            navigate('/login'); // Redirect to login page
+            localStorage.removeItem('token'); 
+            navigate('/login'); 
         }
     };
 
