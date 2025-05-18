@@ -34,7 +34,7 @@ function SentimentPage() {
     const handleLogout = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('https://advanced-sentiment-analysis-1.onrender.com/auth/api/auth/logout', {
+            const response = await fetch('https://advanced-sentiment-analysis-1.onrender.com/api/auth/logout', {
                 method: 'POST',
                 headers: {
                     ...(token && { Authorization: `Bearer ${token}` }),
