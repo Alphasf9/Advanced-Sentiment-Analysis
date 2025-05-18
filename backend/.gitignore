@@ -1,0 +1,67 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+
+# Dependency directories
+pnp/
+.pnp.js
+
+# Testing
+coverage/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+*.pid
+*.seed
+*.pid.lock
+temp/
+tmp/
+</xArtifact>
+
+### Explanation of Included Patterns:
+- **Node.js Dependencies**:
+  - `node_modules/`: Excludes the dependency folder installed by npm or Yarn.
+  - `npm-debug.log`, `yarn-error.log`: Excludes npm and Yarn debug/error logs.
+- **Environment Variables**:
+  - `.env` and variations: Excludes environment variable files to prevent sensitive data (e.g., API keys) from being committed.
+- **Logs**:
+  - `logs/`, `*.log`: Excludes log directories and files.
+- **Build Output**:
+  - `dist/`, `build/`: Excludes build output directories commonly used in Node.js projects.
+- **Testing**:
+  - `coverage/`: Excludes test coverage reports.
+- **IDE/Editor Files**:
+  - `.vscode/`, `.idea/`: Excludes configuration files for VS Code and IntelliJ IDEA.
+- **OS Files**:
+  - `.DS_Store`, `Thumbs.db`: Excludes macOS and Windows system files.
+- **Miscellaneous**:
+  - Temporary files and lock files are excluded to avoid clutter.
+
+This `.gitignore` file is tailored for a typical Node.js application and should cover most use cases. If your project has specific directories or files to exclude (e.g., a custom build folder), you can add them to this file. Let me know if you need additional patterns!
