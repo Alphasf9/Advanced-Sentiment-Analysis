@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { UserDataContext } from '../context/user.context.jsx'  // adjust path if needed
+import { UserDataContext } from '../context/user.context.jsx'  
 
 const Welcome = () => {
   const navigate = useNavigate()
@@ -8,14 +8,17 @@ const Welcome = () => {
   const token = localStorage.getItem('token')
 
   useEffect(() => {
-    // If user logged in (user object exists or token exists), redirect to /sentiment
-    if ((user && user.username) || token) {
+    if (token) {
       navigate('/sentiment')
     }
-  }, [user, token, navigate])
+  }, [token, navigate])
 
   const handleStart = () => {
-    navigate('/signup')
+    if (!token) {
+      navigate('/signup')
+    } else {
+      navigate('/sentiment')
+    }
   }
 
   return (
