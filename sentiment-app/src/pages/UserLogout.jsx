@@ -9,7 +9,7 @@ function UserLogout() {
             try {
                 const token = localStorage.getItem('token');
 
-                await fetch('http://localhost:3000/api/auth/logout', {
+                await fetch('https://advanced-sentiment-analysis-1.onrender.com/auth/logout', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
