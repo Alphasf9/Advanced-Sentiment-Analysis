@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { UserDataContext } from '../context/user.context.jsx'  // adjust path if needed
 
 const Welcome = () => {
   const navigate = useNavigate()
+  const { user } = useContext(UserDataContext)
+  const token = localStorage.getItem('token')
+
+  useEffect(() => {
+    // If user logged in (user object exists or token exists), redirect to /sentiment
+    if ((user && user.username) || token) {
+      navigate('/sentiment')
+    }
+  }, [user, token, navigate])
 
   const handleStart = () => {
     navigate('/signup')
@@ -67,23 +77,23 @@ const Welcome = () => {
 
           .content-container {
             position: absolute;
-            top: 5%; /* Changed to percentage for better control */
+            top: 5%;
             left: 50%;
             transform: translateX(-50%);
             max-width: 600px;
             width: 90%;
             text-align: center;
-            padding-top: 2vh; /* Added to ensure top spacing */
+            padding-top: 2vh;
           }
 
           .title {
             margin-bottom: 1rem;
-            font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font sizing */
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
           }
 
           .subtitle {
             margin-bottom: 1.5rem;
-            font-size: clamp(1rem, 2vw, 1.5rem); /* Responsive font sizing */
+            font-size: clamp(1rem, 2vw, 1.5rem);
           }
 
           .start-button {
