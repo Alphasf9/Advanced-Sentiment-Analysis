@@ -5,7 +5,7 @@ const Welcome = () => {
   const navigate = useNavigate()
 
   const handleStart = () => {
-    navigate('/sentiment')
+    navigate('/signup')
   }
 
   return (
