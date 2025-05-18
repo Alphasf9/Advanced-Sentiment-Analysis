@@ -14,7 +14,7 @@ export const saveSentiment = async (req, res) => {
         const user = await User.findById(userId).select('username');
         if (!user) return res.status(404).json({ message: "User not found" });
 
-        const flaskResponse = await axios.post('http://localhost:5000/predict', { tweet });
+        const flaskResponse = await axios.post('https://advanced-sentiment-analysis.onrender.com/predict', { tweet });
         const sentiment = flaskResponse.data.sentiment;
 
         const historyEntry = await sentimentHistory.create({
