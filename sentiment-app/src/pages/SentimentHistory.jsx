@@ -9,7 +9,7 @@ function SentimentHistoryPage() {
         const fetchHistory = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch('https://advanced-sentiment-analysis-1.onrender.com/auth/sentiment/history', {
+                const response = await fetch('https://advanced-sentiment-analysis-1.onrender.com/api/sentiment/history', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
